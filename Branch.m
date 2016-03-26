@@ -1,7 +1,6 @@
 function [ b ,theta] = Branch( l,B )
-%
-% Note :
-%  Here inpt argument B is in degrees     
+% Function used for finding other branches
+% Note :   Here input argument B is in degrees     
 B = B*pi/180;
 tantheta = -l(2)*sin(B(:,2))./(l(1)-l(2)*cos(B(:,2)));
 
