@@ -10,24 +10,7 @@ function [ deltheta,e ] = JF( l,t )
 %  Here J is the jacobian matrix , Deltheta is the incremental theta , 
 %   F is the function matrix       
 
-%% Program 1
-% l(1)=-l(1);
-% l(4)=-l(4);
-% F1 = l'* cos(t); % loop equation along x-axis 
-% F2 = sin(t)' *l; % loop equation along x-axis
-% Fdash1 = (-sin(t(3:end)).*l(3:end))';
-% Fdash2 = (cos(t(3:end)).*l(3:end))';
-% F = -1*[F1;F2]
-% J = [Fdash1;Fdash2]
-% if(norm(J)~=0)
-% deltheta = J\F;
-% e = norm(deltheta);
-% else
-% fprintf('Jacobian modulus 0!!!!!');
-% end
-
-
-%% Program 2
+%% Program 
 e=0;
 F1 = 0;
 F2 = 0;
