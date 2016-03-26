@@ -1,4 +1,4 @@
-function [e] = Animation( lengths,B,C,f,d,t,x,y )
+function [e] = Animation( lengths,B,C,f,d,t )
 %% Function for animation 
 %**************API******************
 % input arguments :
@@ -77,9 +77,8 @@ elseif(f==1)
              s=1;
          end
          
-%         plot(x(i),y(i),'b-o');
-%         hold on;   
-        axis equal;  
+  
+      %  axis equal;  
     e  =  Plot( lengths,B(i,:));
      hold off;
      i = i + s;
