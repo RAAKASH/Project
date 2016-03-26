@@ -12,10 +12,7 @@ t = 0;
 [ B2,C2,f2,A2,D2 ] = Datacompiler( l2,t ) ;
 [b2]=Branch(l2,B2);           % Finds other branches
 [b1]=Branch(l1,B1);
-%%  x + l2(2)*cos(0 +B2(:,2)+pi/2) =  l1(2)*cos(B1(:,2)+pi/2)
-%   y + l2(2)*sin(0 +B2(:,2)+pi/2) =  l1(2)*sin(B1(:,2)+pi/2)
-%   x + l1(1)*cos(0) + l2(4)*cos(0 + B2(:,2) )+l2(3)*cos(B2 (:,3)-pi/2) = l1(1) + l1(4)*cos(B1(:,4))+ l1(3)*cos(B1(:,3)-pi/2)
-%   y + l1(1)*sin(0) + l2(4)*sin(0 + B2(:,2) )+l2(3)*sin(B2 (:,3)-pi/2) = l1(1) + l1(4)*sin(B1(:,4))+ l1(3)*sin(B1(:,3)-pi/2)
+%%  
 alpha = 5;
 x = 1;
 y = 2;
@@ -24,49 +21,12 @@ B1 =b1*pi/180;
 B2 =b2*pi/180;
 
 
-%%
-% for j = 1:length(B1(:,1) )
-% 
-% for i = 1:length(B2(:,1) )
-% 
-% x =   - l2(2)*cos(B2(i,2)+pi/2) +  l1(2)*cos(B1(j,2)+pi/2)
-% %   pause;
-% y =   - l2(2)*sin(B2(i,2)+pi/2) +  l1(2)*sin(B1(j,2)+pi/2)
-% %    pause;
-% c =  x + l2(1) + l2(4)*cos( B2(i,4) )+ l2(3)*cos(B2(i,3) - pi/2) - (l1(1) + l1(4)*cos(B1(j,4))+ l1(3)*cos(B1(j,3) - pi/2))
-% %    pause;
-% d =  y +  0    + l2(4)*sin( B2(i,4) )+ l2(3)*sin(B2(i,3)- pi/2) - (  0 + l1(4)*sin(B1(j,4))+ l1(3)*sin(B1(j,3) - pi/2))
-% %    pause;
-% if((c^2 + d^2)>100)
-% J(i,j) = (2700) ;
-% else
-%     J(i,j) = (c^2 + d^2) ;
-% end
-% 
-% 
-% %     [ d ] = Plot( l1,B1(j,:));
-% %     axis([-100 200  -500 500]);
-% % hold on;
-% % X = [0,l1(2)*cos(B1(j,2)+pi/2)];
-% % Y = [0,l1(2)*sin(B1(j,2)+pi/2)];
-% % plot(X,Y,'r-o');
-% % hold on;
-% % X1 =[l1(2)*cos(B1(j,2)+pi/2),l1(2)*cos(B1(j,2)+pi/2)- l2(2)*cos(B2(i,2)+pi/2)];
-% % Y1 =[l1(2)*sin(B1(j,2)+pi/2),l1(2)*sin(B1(j,2)+pi/2)- l2(2)*sin(B2(i,2)+pi/2)];
-% % plot(X1,Y1,'r-o');
-% % x = [x,x+l2(2)*cos(B2(i,2)),x+l2(2)*cos(B2(i,2))+l2(3)*cos(B2(i,3)),x+l2(1),x];
-% % y = [y,y+l2(2)*sin(B2(i,2)),y+l2(4)*sin(B2(i,4)),y,y];
-% % g = max(l2);
-% % plot(x,y,'r-o');
-% %  pause(0);
-% %  hold off;
-% 
-% end
-% 
-% end
+%% Data compiler
+
 A = [0,0,0,0];
 f=0;
 t2 = [0,30,50,30]*pi /180;
+
 for i = 1:length(B1(:,1) )
 
  [t2,f] = NewtonRaphson2( l1 ,B1(i,:),l2,t2 );
