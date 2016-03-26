@@ -23,8 +23,8 @@ j=0;
 i=2;
 while(i<=m)
 j=i-1;
-if(B(i,2)-B(i-1,2)>2.1000)  % Highly strange if I change 3 to 2 ,caused due to numeric errors
-%     j=i-1;                i suppose it is not required
+if(B(i,2)-B(i-1,2)>2.1000)  
+
     break;
 end
 i=i+1;
